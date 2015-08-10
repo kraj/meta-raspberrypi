@@ -23,19 +23,30 @@ SRC_URI = "\
     file://0003-fix-alloc-size-uninitialized.patch \
     file://0002-set-VMCS_INSTALL_PREFIX-to-usr.patch \
     file://0003-cmake-generate-and-install-pkgconfig-files.patch \
+    file://0004-Allow-applications-to-set-next-resource-handle.patch \
+    file://0005-wayland-Add-support-for-the-Wayland-winsys.patch \
+    file://0006-wayland-Add-Wayland-example.patch \
+    file://0007-wayland-egl-Add-bcm_host-to-dependencies.patch \
     "
 
 S = "${WORKDIR}/git"
 
 inherit cmake pkgconfig
 
-EXTRA_OECMAKE = "-DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS='-Wl,--no-as-needed'"
+EXTRA_OECMAKE = "-DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS='-Wl,--no-as-needed' \
+                "
+
+PACKAGECONFIG ?= "${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'wayland', '', d)}"
+
+PACKAGECONFIG[wayland] = "-DBUILD_WAYLAND=TRUE,,wayland,"
+
 CFLAGS_append = " -fPIC"
 
 # Shared libs from userland package  build aren't versioned, so we need
 # to force the .so files into the runtime package (and keep them
 # out of -dev package).
 FILES_SOLIBSDEV = ""
+INSANE_SKIP_${PN} += "dev-so"
 
 FILES_${PN} += " \
     ${libdir}/*.so \
