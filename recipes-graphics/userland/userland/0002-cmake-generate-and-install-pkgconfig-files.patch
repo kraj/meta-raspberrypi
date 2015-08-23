@@ -1,14 +1,13 @@
-From ef43e09c2d13b88c2e92cffc94b68003afcb1f13 Mon Sep 17 00:00:00 2001
+From 201277d2ae4cc1344ef0775596ff057d58c12595 Mon Sep 17 00:00:00 2001
 From: Khem Raj <raj.khem@gmail.com>
 Date: Sun, 9 Aug 2015 23:59:32 -0700
-Subject: [PATCH 2/2] cmake: generate and install pkgconfig files
+Subject: [PATCH 2/9] cmake: generate and install pkgconfig files
 
 many packages expect packageconfig support especially for detecting EGL
 libraries. This patch helps in compiling those packages on RPi
 
 Signed-off-by: Khem Raj <raj.khem@gmail.com>
 ---
-Upstream-Status: Submitted
  CMakeLists.txt           | 10 +++++++++-
  pkgconfig/bcm_host.pc.in | 10 ++++++++++
  pkgconfig/egl.pc.in      | 12 ++++++++++++

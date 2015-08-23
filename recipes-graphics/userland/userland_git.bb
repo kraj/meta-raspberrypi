@@ -21,12 +21,15 @@ SRC_URI = "\
     file://0001-fix-gcc-5.x-inlines.patch \
     file://0002-fix-musl-build.patch \
     file://0003-fix-alloc-size-uninitialized.patch \
-    file://0002-set-VMCS_INSTALL_PREFIX-to-usr.patch \
-    file://0003-cmake-generate-and-install-pkgconfig-files.patch \
-    file://0004-Allow-applications-to-set-next-resource-handle.patch \
-    file://0005-wayland-Add-support-for-the-Wayland-winsys.patch \
-    file://0006-wayland-Add-Wayland-example.patch \
-    file://0007-wayland-egl-Add-bcm_host-to-dependencies.patch \
+    file://0001-set-VMCS_INSTALL_PREFIX-to-usr.patch \
+    file://0002-cmake-generate-and-install-pkgconfig-files.patch \
+    file://0003-Allow-applications-to-set-next-resource-handle.patch \
+    file://0004-wayland-Add-support-for-the-Wayland-winsys.patch \
+    file://0005-wayland-Add-Wayland-example.patch \
+    file://0006-wayland-egl-Add-bcm_host-to-dependencies.patch \
+    file://0007-user-vcsm-Fix-build-with-clang.patch \
+    file://0008-Fix-enum-type-conversion-warnings.patch \
+    file://0009-vcos_platform_types-Dont-use-extern-inline-with-clan.patch \
     "
 
 S = "${WORKDIR}/git"

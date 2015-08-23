@@ -1,13 +1,12 @@
-From 05554d8486050546efc3c0605015786c8b267d19 Mon Sep 17 00:00:00 2001
+From 58bbb7d205f4bb5d33be8fff05fe199a193b7f03 Mon Sep 17 00:00:00 2001
 From: Khem Raj <raj.khem@gmail.com>
 Date: Sun, 9 Aug 2015 23:58:17 -0700
-Subject: [PATCH 1/2] set VMCS_INSTALL_PREFIX to /usr
+Subject: [PATCH 1/9] set VMCS_INSTALL_PREFIX to /usr
 
 in OE we dont use /opt/vc but standard prefix
 
 Signed-off-by: Khem Raj <raj.khem@gmail.com>
 ---
-Upstream-Status: Submitted
  makefiles/cmake/vmcs.cmake | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 

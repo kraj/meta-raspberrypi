@@ -1,7 +1,7 @@
-From de087d5081c45384c40f62de70267581476edba3 Mon Sep 17 00:00:00 2001
+From 429457a9f9f02634bfbd4825f3eba352b3292bfc Mon Sep 17 00:00:00 2001
 From: Khem Raj <raj.khem@gmail.com>
 Date: Mon, 10 Aug 2015 02:38:27 -0700
-Subject: [PATCH] wayland-egl: Add bcm_host to dependencies
+Subject: [PATCH 6/9] wayland-egl: Add bcm_host to dependencies
 
 It uses headers like vcos_platform_types.h but does not
 depend on module which should add the required include paths
@@ -9,8 +9,6 @@ lets add the dependency on bcm_host module which should do it
 
 Signed-off-by: Khem Raj <raj.khem@gmail.com>
 ---
-Upstream-Status: Submitted
-
  interface/khronos/wayland-egl/wayland-egl.pc.in | 1 +
  1 file changed, 1 insertion(+)
 
