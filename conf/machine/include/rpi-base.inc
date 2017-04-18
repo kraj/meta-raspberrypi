@@ -57,3 +57,6 @@ IMAGE_BOOT_FILES ?= "bcm2835-bootfiles/* ${KERNEL_IMAGETYPE};${SDIMG_KERNELIMAGE
 # The kernel image is installed into the FAT32 boot partition and does not need
 # to also be installed into the rootfs.
 RDEPENDS_kernel-base = ""
+
+# Extra udev rules
+MACHINE_EXTRA_RRECOMMENDS += "udev-rules-rpi"
